@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>PIAIC JavaScript Assignment Chapter_21_30a</title>
+</head>
+
+<body>
+   <h1>JS Chapter 21_30a</h1>
+   <hr>
+   <script>
+
+      var userInput = parseFloat(prompt("Enter Decimal Number:", 3.4));
+      userInput = Math.ceil(userInput);
+
+      var textInput = "This is my dummy text.";
+
+      var sliceText = textInput.slice(0, userInput);
+      alert(sliceText);
+
+      var reverseText = "";
+
+      for (let index = 0; index <= sliceText.length; index++) {
+         reverseText = reverseText + sliceText.charAt(sliceText.length - index);
+
+      }
+      alert(reverseText);
+   </script>
+
+</body>
+
+</html>

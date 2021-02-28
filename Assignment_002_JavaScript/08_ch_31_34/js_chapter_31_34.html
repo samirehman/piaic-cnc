@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>PIAIC JavaScript Assignment Chapter_31_34</title>
+</head>
+
+<body>
+   <h1>JS Chapter 31_34</h1>
+   <hr>
+   <script>
+
+      var userName = prompt("Enter Your Name", "Ameen Alam");
+      var userDay  = parseInt(prompt("Enter DOB(Day)", "24"));
+      var userMon  = parseInt(prompt("Enter DOB(Mon)", "05"));
+      var userYear = parseInt(prompt("Enter DOB(Year)", "1999"));
+
+      var pkDateNow = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Karachi' }));
+      var DOB = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Karachi' }));;
+
+      DOB.setDate(userDay);
+      DOB.setMonth(userMon);
+      DOB.setFullYear(userYear);
+      DOB.setHours(0,0,0,0);
+
+      //DOB = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Karachi' }));
+      alert(DOB);
+      alert(pkDateNow);
+   </script>
+
+</body>
+
+</html>

@@ -2,59 +2,92 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PIAIC JavaScript Assignment Chapter_15_16_17</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>PIAIC JavaScript Assignment Chapter_15_16_17</title>
 </head>
 
 <body>
-    <h1>JS Chapter 15_16_17</h1>
-    <hr>
-    <script>
+   <h1>JS Chapter 15_16_17</h1>
+   <hr>
+   <script>
 
-       var courses = [];
-       var courseName="";
-       var courseList="";
-       // default cours list
-       var defaultCourse =['Computer','Python','Java','Docker','Html'];
-       
-       // using loop for repitative inputs
-      for (let index = 0; index < 5; index++) {
-         // get course name
-         courseName = prompt("Enter Course "+(index+1)+" Name",defaultCourse[index]);
-         // save it in courses array
-         courses.push(courseName);
-         
-         if (courseList==""){  // avoid the first ,
-            courseList = courses[index]; 
-         } else{
-            courseList = courseList +","+ courses[index]; 
-         }
-         
-        };
-        
-        alert(courseList);
-        // reset courseList
-        courseList ="";
-        // loop for editting the inputs 
-        for (let index = 0; index < 5; index++) {
-         // Display the saved course in courses array for editting 
-         courseName = prompt("Edit Course  "+courses[index],courses[index]);
-         // use splice function to delete an entry and add the new
-         courses.splice(index,1,courseName);
-         
-         if (courseList==""){  // avoid the first ,
-            courseList = courses[index]; 
-         } else{
-            courseList = courseList +","+ courses[index]; 
-         }
-         
-        };
-        
-        alert(courseList);
+      var courses = [];
+      var courseName = "";
+      var courseList = "";
+      // default cours list
+      var defaultCourse = ['Computer', 'Python', 'Java', 'Docker', 'Html'];
 
-    </script>
-    
+      // get course name
+      courseName = prompt("Enter Course 01 Name", defaultCourse[0]);
+      // save it in courses array
+      courses.push(courseName);
+      courseList = courses[0];
+
+      // get course name
+      courseName = prompt("Enter Course 02 Name", defaultCourse[1]);
+      // save it in courses array
+      courses.push(courseName);
+      courseList = courseList + "," + courses[1];
+
+      // get course name
+      courseName = prompt("Enter Course 03 Name", defaultCourse[2]);
+      // save it in courses array
+      courses.push(courseName);
+      courseList = courseList + "," + courses[2];
+
+      // get course name
+      courseName = prompt("Enter Course 04 Name", defaultCourse[3]);
+      // save it in courses array
+      courses.push(courseName);
+      courseList = courseList + "," + courses[3];
+
+      // get course name
+      courseName = prompt("Enter Course 05 Name", defaultCourse[4]);
+      // save it in courses array
+      courses.push(courseName);
+      courseList = courseList + "," + courses[4];
+
+
+      alert(courseList);
+      // reset courseList
+      courseList = "";
+      // Edit courses
+
+      // Display the saved course in courses array for editting 
+      courseName = prompt("Edit Course  " + courses[0], courses[0]);
+      // use splice function to delete an entry and add the new
+      courses.splice(0, 1, courseName);
+      courseList = courses[0];
+
+      // Display the saved course in courses array for editting 
+      courseName = prompt("Edit Course  " + courses[1], courses[1]);
+      // use splice function to delete an entry and add the new
+      courses.splice(1, 1, courseName);
+      courseList = courseList + "," + courses[1];
+
+      // Display the saved course in courses array for editting 
+      courseName = prompt("Edit Course  " + courses[2], courses[2]);
+      // use splice function to delete an entry and add the new
+      courses.splice(2, 1, courseName);
+      courseList = courseList + "," + courses[2];
+
+      // Display the saved course in courses array for editting 
+      courseName = prompt("Edit Course  " + courses[3], courses[3]);
+      // use splice function to delete an entry and add the new
+      courses.splice(3, 1, courseName);
+      courseList = courseList + "," + courses[3];
+
+      // Display the saved course in courses array for editting 
+      courseName = prompt("Edit Course  " + courses[4], courses[4]);
+      // use splice function to delete an entry and add the new
+      courses.splice(4, 1, courseName);
+      courseList = courseList + "," + courses[4];
+
+      alert(courseList);
+
+   </script>
+
 </body>
 
 </html>
