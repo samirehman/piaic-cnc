@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PIAIC JavaScript Assignment Chapter_10_14b</title>
+</head>
+
+<body>
+    <h1>JS Chapter 10_14b</h1>
+    <hr>
+    <script>
+
+        var courseMarks = 0;
+        var marksObtain = 0;
+        var totalMarks = 500;
+        var pctObtained = 0;
+        
+        for (let index = 1; index < 6; index++) {
+         courseMarks = parseInt(prompt("Course "+index+" Marks Obtain",1));
+         marksObtain = courseMarks + marksObtain;
+           
+        };
+        pctObtained = (marksObtain*100)/totalMarks;
+        alert("Percentage Obtained: "+ pctObtained +"%");
+    </script>
+    
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PIAIC JavaScript Assignment Chapter_10_14a</title>
+</head>
+
+<body>
+    <h1>JS Chapter 10_14a</h1>
+    <hr>
+    <script>
+        var fistInput = parseInt(prompt("Input First Number:",1));
+        var secdInput = parseInt(prompt("Input Second Number:",1));
+     
+        var operatorInput = prompt("Input Operation e.g. \"+\" or \"-\" or \"*\" or \"/\" or \"%\"","+");
+    
+        var result=0;
+  
+        if (operatorInput == "+") {
+           result =  fistInput + secdInput;
+        }
+        else if (operatorInput == "-") {
+           result =  fistInput - secdInput;
+        }
+        else if (operatorInput == "*") {
+           result =  fistInput * secdInput;
+        } 
+        else if (operatorInput == "/") {
+           result =  fistInput / secdInput;
+        } 
+        else if (operatorInput == "%") {
+           result =  fistInput % secdInput;
+        } else {
+            result =  fistInput + secdInput;
+        };
+       
+        alert(fistInput + " " + operatorInput + " " + secdInput + " = " +result );
+
+    </script>
+    
+</body>
+
+</html>

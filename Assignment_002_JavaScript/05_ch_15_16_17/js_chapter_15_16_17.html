@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PIAIC JavaScript Assignment Chapter_15_16_17</title>
+</head>
+
+<body>
+    <h1>JS Chapter 15_16_17</h1>
+    <hr>
+    <script>
+
+       var courses = [];
+       var courseName="";
+       var courseList="";
+       // default cours list
+       var defaultCourse =['Computer','Python','Java','Docker','Html'];
+       
+       // using loop for repitative inputs
+      for (let index = 0; index < 5; index++) {
+         // get course name
+         courseName = prompt("Enter Course "+(index+1)+" Name",defaultCourse[index]);
+         // save it in courses array
+         courses.push(courseName);
+         
+         if (courseList==""){  // avoid the first ,
+            courseList = courses[index]; 
+         } else{
+            courseList = courseList +","+ courses[index]; 
+         }
+         
+        };
+        
+        alert(courseList);
+        // reset courseList
+        courseList ="";
+        // loop for editting the inputs 
+        for (let index = 0; index < 5; index++) {
+         // Display the saved course in courses array for editting 
+         courseName = prompt("Edit Course  "+courses[index],courses[index]);
+         // use splice function to delete an entry and add the new
+         courses.splice(index,1,courseName);
+         
+         if (courseList==""){  // avoid the first ,
+            courseList = courses[index]; 
+         } else{
+            courseList = courseList +","+ courses[index]; 
+         }
+         
+        };
+        
+        alert(courseList);
+
+    </script>
+    
+</body>
+
+</html>
