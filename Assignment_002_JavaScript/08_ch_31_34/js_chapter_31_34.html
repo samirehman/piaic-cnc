@@ -13,21 +13,111 @@
    <script>
 
       var userName = prompt("Enter Your Name", "Ameen Alam");
-      var userDay  = parseInt(prompt("Enter DOB(Day)", "24"));
-      var userMon  = parseInt(prompt("Enter DOB(Mon)", "05"));
+      var userDay = parseInt(prompt("Enter DOB(Day)", "24"));
+      var userMon = parseInt(prompt("Enter DOB(Mon)", "05"));
       var userYear = parseInt(prompt("Enter DOB(Year)", "1999"));
+      var salutation = "";
+      var postFix = ["th","st","nd","rd","th","th","th","th","th","th"]
 
-      var pkDateNow = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Karachi' }));
-      var DOB = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Karachi' }));;
+      var todayDate = new Date();
+      var pkDOB = "";
+      var DOB = new Date();
 
+      var currentHour = todayDate.getHours();
+
+      // Salutation Good Morning, Afternoon, Evening, Night
+      if (currentHour >= 0 && currentHour <= 11) {
+         salutation = "Hello " + userName + ", Good Morning!";
+      } else if (currentHour >= 12 && currentHour <= 14) {
+         salutation = "Hello " + userName + ", Good Afternoon!";
+      } else if (currentHour >= 15 && currentHour <= 19) {
+         salutation = "Hello " + userName + ", Good Evening!";
+      } else {
+         salutation = "Hello " + userName + ", Good Night!";
+      }
+      // Date of Birth with Pakistan Standard Time
       DOB.setDate(userDay);
       DOB.setMonth(userMon);
       DOB.setFullYear(userYear);
-      DOB.setHours(0,0,0,0);
+      DOB.setHours(0, 0, 0, 0);
 
-      //DOB = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Karachi' }));
-      alert(DOB);
-      alert(pkDateNow);
+
+      //alert(salutation);
+      console.log(salutation);
+      //alert("Your Date of Birth is :"+pkDOB);
+      console.log("Your Date of Birth is :" + DOB);
+
+      var diff = Math.floor(todayDate.getTime() - DOB.getTime());
+
+      var totalsec = Math.floor(diff / 1000);
+      var ageInDays = Math.floor(totalsec / (60 * 60 * 24));
+
+      var vyears = Math.floor(totalsec / (60 * 60 * 24 * 365));
+
+      totalsec = totalsec - (vyears * (60 * 60 * 24 * 365));
+
+      var vmonths = Math.floor(totalsec / (60 * 60 * 24 * 31));
+
+      totalsec = totalsec - (vmonths * (60 * 60 * 24 * 31));
+
+      var vdays = Math.floor(totalsec / (60 * 60 * 24));
+
+      totalsec = totalsec - (vdays * (60 * 60 * 24));
+
+      var vhours = Math.floor(totalsec / (60 * 60));
+
+      totalsec = totalsec - (vhours * (60 * 60));
+
+      var vminutes = Math.floor(totalsec / 60);
+
+      totalsec = totalsec - (vminutes * (60));
+
+
+      var message = "You are ";
+      message += vyears + " years "
+         + vmonths + " months "
+         + vdays + " days "
+         + vhours + " hours "
+         + vminutes + " minutes "
+         + totalsec + " seconds old \n"
+         + "\"Your Age in Days " + ageInDays+"\"";
+
+      console.log(message);
+
+      //How much time left in your next birth day
+      DOB.setFullYear(todayDate.getFullYear() + 1);
+
+      diff = Math.floor(DOB.getTime() - todayDate.getTime());
+
+      totalsec = Math.floor(diff / 1000);
+      // ageInDays = Math.floor(totalsec/(60*60*24));
+      //var vyears = Math.floor(totalsec/(60*60*24*365));
+
+      //totalsec = totalsec - (vyears * (60*60*24*365));
+
+      //var vmonths = Math.floor(totalsec/(60*60*24*12));
+
+      //totalsec = totalsec - (vmonths * (60*60*24*12));
+
+      var vdays = Math.floor(totalsec / (60 * 60 * 24));
+
+      totalsec = totalsec - (vdays * (60 * 60 * 24));
+
+      var vhours = Math.floor(totalsec / (60 * 60));
+
+      totalsec = totalsec - (vhours * (60 * 60));
+
+      var vminutes = Math.floor(totalsec / 60);
+
+      totalsec = totalsec - (vminutes * (60));
+
+      message = "\"How much time left in your next birthday? ";
+      message += vdays + " days "
+         + vhours + " hours "
+         + vminutes + " minutes "
+         + totalsec + " seconds \"\n or "
+         + "\"happy Birthday " + userName + ". Today is Your " + vyears + postFix[vyears%10]+" Birthday\".";
+      console.log(message);           
    </script>
 
 </body>
