@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>PIAIC JavaScript Assignment Chapter_35_38a(Convert to Statement Case)</title>
+</head>
+
+<body>
+   <h1>JS Chapter 35_38a(Convert to Statement Case)</h1>
+   <hr>
+   <script>
+
+      var  getInput = prompt("Enter String to Convert:", "cloUd naTive computinG");
+
+      convertStatementCase(getInput);
+      
+      // convert the whole string in lower case
+      
+   function convertStatementCase(userInput) {
+      
+      var result = "";
+      userInput = userInput.toLowerCase();
+
+      while (true) { // loop until all is converted.
+         
+         if (userInput.indexOf(" ") != -1) {
+            result = result + userInput.slice(0, 1).toUpperCase() + userInput.slice(1, userInput.indexOf(" ")) + " ";
+         } else {
+            result = result + userInput.slice(0, 1).toUpperCase() + userInput.slice(1, userInput.length);
+            break;
+         }
+         userInput = userInput.slice(userInput.indexOf(" ") + 1, userInput.length);
+      }
+      console.log(result);
+   };
+
+      
+   </script>
+
+</body>
+
+</html>

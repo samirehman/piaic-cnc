@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>PIAIC JavaScript Assignment Chapter_35_38b (Factorial)</title>
+</head>
+
+<body>
+   <h1>JS Chapter 35_38b(Factorial)</h1>
+   <hr>
+   <script>
+
+      var getInput = parseInt(prompt("Enter Number to Get Factorial:", "5"));
+
+      getFactorial(getInput);
+
+      // Get factorial of a number
+
+      function getFactorial(userInput) {
+
+         var factor = 1;
+
+         while (userInput != 0) { // loop until all is converted.
+
+            factor = userInput * factor;
+            userInput = userInput - 1;
+         }
+         console.log(factor);
+      };
+
+   </script>
+
+</body>
+
+</html>

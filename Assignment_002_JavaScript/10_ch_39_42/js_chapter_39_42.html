@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>PIAIC JavaScript Assignment Chapter_39_42</title>
+</head>
+
+<body>
+   <h1>JS Chapter 39_42(Make a Percentage Calculator)</h1>
+   <hr>
+   <script>
+
+      var totalMarks = 500;
+      var courseMarks = 0;
+      var getCourseMarks = 0;
+      var marksPercentage = 0;
+      var gradeObtain = "";
+     
+      // using loop for repitative inputs
+      for (let index = 0; index < 5; index++) {
+         // get course marks
+         getCourseMarks = parseInt(prompt("Enter Marks for Course (" + (index + 1) + "of 5):","70"));
+         // Get the sum of all course marks
+         courseMarks = courseMarks + getCourseMarks;
+      };
+      // calculate the percentage
+      marksPercentage = (Math.floor((courseMarks/totalMarks)*100));
+
+      alert(marksPercentage);
+
+     switch (true) {
+        case (marksPercentage >= 90): gradeObtain = "Grade A+"; break;
+        case (marksPercentage >= 75): gradeObtain = "Grade A "; break;
+        case (marksPercentage >= 60): gradeObtain = "Grade B "; break;
+        case (marksPercentage >= 45): gradeObtain = "Grade C "; break;
+        case (marksPercentage >= 30): gradeObtain = "Grade D "; break;
+        default: gradeObtain = "Grade F ";break;
+     }
+     alert(gradeObtain+" "+marksPercentage+"%");
+
+   </script>
+
+</body>
+
+</html>
